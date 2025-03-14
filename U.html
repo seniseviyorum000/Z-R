@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zehrama Şiirler</title>
+<style>
+    body {
+        background-color: #f3e6fa;
+        font-family: "Times New Roman", serif;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .poem {
+        margin-bottom: 40px;
+        border-bottom: 1px solid #c49ddf;
+        padding-bottom: 20px;
+    }
+    .poem h2 {
+        color: #a474c7;
+        text-align: center;
+    }
+    .poem p {
+        white-space: pre-wrap;
+    }
+</style>
+</head>
+<body>
+<h1 style="text-align: center; color: #a474c7;">Zehrama Şiirler</h1>
+<div id="poems">
+    <!-- Şiirler buraya eklenecek -->
+</div>
+<script>
+    const poems = [
+        { title: "1. Şiir", content: "Gözlerin bir deniz, derin ve duru,\nKalbime huzurla açılır yolu.\nHer bakışın sanki bir bahar nuru,\nSevginde buldum huzuru, soluğu.\nSeninle tamam bu yarım ömrüm,\nHayalinle dolu her bir günüm." },
+        { title: "2. Şiir", content: "Bir sabah rüzgarı, saçların gibi,\nMis kokun bahçemde açan gül gibi.\nSesin yankılanır kalbimde hep mi?\nSensiz solgun, sensiz karanlık gibi.\nSevdan ömrüme ışık tutarken,\nDüşlerimden hiç eksilme, erken." },
+        { title: "3. Şiir", content: "Ellerin dokunsa kır çiçekleri,\nGülüşün ısıtır buzdan dilleri.\nHasretin yakarken uzak günleri,\nSevginle sararım kırık dünleri.\nSeninle sonsuzluk hayalimde,\nKalbinle var olur her hecemde." },
+        { title: "4. Şiir", content: "Bir yıldız misali parlarsın gece,\nHayalin düşerken sessiz hece hece.\nSevdan kor gibi yüreğimde ince,\nSeninle baharım hiç bitmeyecekçe.\nAdını anarken titrer dudaklar,\nSensiz dert olur her an, her bahar." },
+        { title: "5. Şiir", content: "Gözlerin bahardır, içim açılır,\nGülüşün ufkumda güneş saçılır.\nSevdanla her sabah umutla dolur,\nKalbimden geçerken yollar yapılır.\nSeninle yaşamak en güzel rüya,\nÖmrüme nefessin, canım Zehra." },
+        { title: "6. Şiir", content: "Adını her duyuş bir masal gibi,\nKalbimde yankılanır nazik, diri.\nSaçların geceye dökülür iri,\nSevdan dokunurken en derin yeri.\nSeninle hayatım bayram sabahı,\nSevginle ışır her günün ahı." },
+        { title: "7. Şiir", content: "Geceye ay doğsa, senin kadar saf,\nDudakların ateş, yakar usulca haf.\nEllerin değince erir bu taraf,\nSevdanla yıkanır kalbimce taraf.\nSeninle yürürüm yol olsa uzak,\nSevginden düşer mi gönlümde tuzak?" },
+        { title: "8. Şiir", content: "Sesin meltem gibi, huzur doludur,\nSevdan bahçemde açan gül olur.\nKalbime işleyen ince bir teldir,\nSeninle her sabah yeniden doğur.\nÖmrümde baharsın, sensiz hep kış,\nSevdanla ısınır bu kırık bakış." },
+        { title: "9. Şiir", content: "Hasretin gönlümde dalga dalga ah,\nHer gece yıldızlar seni anlatır mah.\nSevdan yüreğimde gizli bir sabah,\nSeninle kaybolur her acı ve ah.\nSensiz yarım kalan sözlerim var,\nSevginle tamamdır her bir bahar." },
+        { title: "10. Şiir", content: "Kirpiklerin gölgem, bakışın sırlar,\nSevdan gönlümde ateşten yollar.\nKalbimde isminle çiçekler parlar,\nSensiz her mevsim sonbahar yollar.\nSeninle doludur bu boş sokaklar,\nSevginle aydınlanır tüm duvarlar." },
+        { title: "11. Şiir", content: "Bir umut gibi doğ kalbime yine,\nGözlerin dursun sonsuz derinde.\nEllerin uzansın tut ellerimi de,\nSevdanla ışır her karanlık köşe.\nSeninle tamamlanır yarım heceler,\nKalbinle döner bu dünya sever." },
+        { title: "12. Şiir", content: "Gözlerin gökyüzü, mavi ve serin,\nSevdan sarmışken bu bitmez derin.\nHer gülüşün bahar, içim sevinçli,\nSeninle anlamlı her an, her dilim.\nKalbinle dolarken boş sokaklar,\nSevginle güzeldir her bir bahar." },
+        { title: "13. Şiir", content: "Gözlerin deniz, derin ve sakin,\nSevdan içimde bahar gibi zengin.\nEllerin dokunsa en masum akın,\nKalbimde sevginle açılır her kin.\nSeninle geçerken zaman usulca,\nÖmrümden eksilmez sevda bir damla." },
+        { title: "14. Şiir", content: "Sesinle dağılır gecenin karası,\nGülüşün aydınlatır her boş arası.\nSevdanla dolarken kalbimin yarası,\nSeninle unutulur dünyanın yası.\nHayalinle yürürken ince yollar,\nSevginle çoğalır içimde bahar." },
+        { title: "15. Şiir", content: "Bir bakışın yeter, dünya susar,\nKalbimde sevdanla bahar başlar.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "16. Şiir", content: "Kirpiklerin düşse geceye nazik,\nSevdan kalbimde iz bırakır incecik.\nHer sözün bir bahar, sesin dengin,\nSeninle güzelleşir bu hüzüncük.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "17. Şiir", content: "Saçların dokunsa rüzgar hafifler,\nSevdan bahçemde açan güller.\nGözlerin dursa bir masal gibi derin,\nSeninle tamam olur bu eksik şiirler.\nKalbinle dolarken her boş sokak,\nSevginde kaybolur en sert tuzak." },
+        { title: "18. Şiir", content: "Adını fısıldar gece yıldızlara,\nKalbimde sevdanla açar her yara.\nSesinle dağılır hüzün bulutları,\nSeninle aydınlanır en karanlık ara.\nSevginle yürürken zaman usulca,\nÖmrümden eksilmez bu sevda asla." },
+        { title: "19. Şiir", content: "Ellerin tutunca zaman durur,\nGözlerin umutla gönlümde kurulur.\nSevdanla sarılır en soğuk huzur,\nSeninle anlam bulur her yol, her dur.\nKalbinde dinlenir yorgun düşler,\nSevginle büyür bu sonsuz heceler." },
+        { title: "20. Şiir", content: "Kirpiklerin gölge düşürür maviye,\nSevdanla sarılır en sessiz gece.\nHer bakışın umut, bir masal gibi,\nSeninle silinir tüm eski çile.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "21. Şiir", content: "Bir gülüşün yeter, dertler dağılır,\nKalbimde sevdanla bahar çağrılır.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "22. Şiir", content: "Sesinle ısınır en soğuk akşam,\nSevdanla dolarken içim her zaman.\nGözlerin bakarken en derin liman,\nSeninle tamam olur bu eksik zaman.\nKalbinde dinlenir yorgun düşler,\nSevginle büyür bu sonsuz heceler." },
+        { title: "23. Şiir", content: "Adını anarken titrer dudaklar,\nSevdanla ışır her gece ve bahar.\nKirpiklerin gölge düşürür maviye,\nSeninle anlam bulur her bir diyar.\nSevginle yürürken zaman usulca,\nÖmrümden eksilmez bu sevda asla." },
+        { title: "24. Şiir", content: "Gözlerin bahardır, içim açılır,\nGülüşün ufkumda güneş saçılır.\nSevdanla her sabah umutla dolur,\nKalbimden geçerken yollar yapılır.\nSeninle yaşamak en güzel rüya,\nÖmrüme nefessin, canım Zehra." },
+        { title: "25. Şiir", content: "Bir sabah rüzgarı, saçların gibi,\nMis kokun bahçemde açan gül gibi.\nSesin yankılanır kalbimde hep mi?\nSensiz solgun, sensiz karanlık gibi.\nSevdan ömrüme ışık tutarken,\nDüşlerimden hiç eksilme, erken." },
+        { title: "26. Şiir", content: "Bir umut yeşerir gözlerinde hep,\nSevdanla kaybolur içimdeki dert.\nEllerin değince zaman bile geç,\nSeninle anlam bulur her yeni renk.\nKalbinle yaşarken bu sonsuz düşte,\nSevginde yitirilmez umut, neşe." },
+        { title: "27. Şiir", content: "Sesinle dağılır gecenin korkusu,\nGözlerin ışık, en temiz dokusu.\nSevdanla dolarken içimde huzur,\nSeninle tamam bu eksik yolculuk.\nKalbinle yürürken her yol dümdüz,\nSevginle silinir geçmişteki hüzün." },
+        { title: "28. Şiir", content: "Ellerin bahardır, tutunca sıcak,\nGözlerin umutla dolarken uzak.\nSevdanla sarılır her eski tuzak,\nSeninle yaşanır en temiz merak.\nKalbinle tamamdır bu eksik yürek,\nSevginle silinir tüm eski gerek." },
+        { title: "29. Şiir", content: "Kirpiklerin dokunsa en hafif rüzgar,\nSevdan kalbimde en derin bahar.\nHer bakışın içimi ısıtır yavaş,\nSeninle yaşanır en temiz savaş.\nKalbinde dururken sessiz bir meltem,\nSevginde kaybolur her eski elem." },
+        { title: "30. Şiir", content: "Bir gülüşün yeter, dertler dağılır,\nKalbimde sevdanla bahar çağrılır.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "31. Şiir", content: "Gözlerin deniz, dalgalı ve geniş,\nSevdan sarmışken her yanım serin.\nSesinle titrer en karanlık köşe,\nSeninle anlam bulur her gece.\nKalbinle yürürken yollar dümdüz,\nSevginle silinir geçmişteki hüzün." },
+        { title: "32. Şiir", content: "Adını fısıldar yıldızlar gece,\nKalbimde sevdanla açar her hece.\nEllerin değince en masum nağme,\nSeninle tamam olur bu ince çile.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "33. Şiir", content: "Bir bakışın yeter, dünya susar,\nKalbimde sevdanla bahar başlar.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "34. Şiir", content: "Gözlerin bahardır, içim açılır,\nGülüşün ufkumda güneş saçılır.\nSevdanla her sabah umutla dolur,\nKalbimden geçerken yollar yapılır.\nSeninle yaşamak en güzel rüya,\nÖmrüme nefessin, canım Zehra." },
+        { title: "35. Şiir", content: "Sesinle erir en sert duvarlar,\nSevdanla dolarken içim baharlar.\nGözlerin bakarken umutla hep var,\nSeninle unutulur dertli anılar.\nKalbinle yürürken her yol dümdüz,\nSevginle silinir geçmişteki hüzün." },
+        { title: "36. Şiir", content: "Bir sabah rüzgarı, saçların gibi,\nMis kokun bahçemde açan gül gibi.\nSesin yankılanır kalbimde hep mi?\nSensiz solgun, sensiz karanlık gibi.\nSevdan ömrüme ışık tutarken,\nDüşlerimden hiç eksilme, erken." },
+        { title: "37. Şiir", content: "Kirpiklerin düşse geceye nazik,\nSevdan kalbimde iz bırakır incecik.\nHer sözün bir bahar, sesin dengin,\nSeninle güzelleşir bu hüzüncük.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "38. Şiir", content: "Adını her duyuş bir masal gibi,\nKalbimde yankılanır nazik, diri.\nSaçların geceye dökülür iri,\nSevdan dokunurken en derin yeri.\nSeninle hayatım bayram sabahı,\nSevginle ışır her günün ahı." },
+        { title: "39. Şiir", content: "Gözlerin gökyüzü, mavi ve serin,\nSevdan sarmışken bu bitmez derin.\nHer gülüşün bahar, içim sevinçli,\nSeninle anlamlı her an, her dilim.\nKalbinle dolarken boş sokaklar,\nSevginle güzeldir her bir bahar." },
+        { title: "40. Şiir", content: "Ellerin dokunsa kır çiçekleri,\nGülüşün ısıtır buzdan dilleri.\nHasretin yakarken uzak günleri,\nSevginle sararım kırık dünleri.\nSeninle sonsuzluk hayalimde,\nKalbinle var olur her hecemde." },
+        { title: "41. Şiir", content: "Bir yıldız düşerken dilek tutarım,\nSevdanla dolar her boş sayfam.\nGözlerin bakarken sonsuz ve derin,\nSeninle anlam bulur en eski yanım.\nKalbinde saklanır en güzel düşler,\nSevginde kaybolur yalan her şeyler." },
+        { title: "42. Şiir", content: "Sesinle ısınır en soğuk akşam,\nGözlerinle parlar karanlık zaman.\nSevdanla yürürken yollar sonsuz,\nSeninle unutulur her eski hüsran.\nKalbinle dolarken içim umutla,\nSevginle başlar her sabah usulca." },
+        { title: "43. Şiir", content: "Ellerin bahardır, değse bu cana,\nSevdanla dolarken içim yana yana.\nGözlerin umuttur, ışır her sabah,\nSeninle yaşanır en masum rüya.\nKalbinle tamamdır bu eksik yol,\nSevginde kaybolur her eski soluk." },
+        { title: "44. Şiir", content: "Kirpiklerin düşse geceye nazik,\nSevdan kalbimde iz bırakır incecik.\nHer sözün bir bahar, sesin dengin,\nSeninle güzelleşir bu hüzüncük.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "45. Şiir", content: "Bir sabah rüzgarı, saçların gibi,\nMis kokun bahçemde açan gül gibi.\nSesin yankılanır kalbimde hep mi?\nSensiz solgun, sensiz karanlık gibi.\nSevdan ömrüme ışık tutarken,\nDüşlerimden hiç eksilme, erken." },
+        { title: "46. Şiir", content: "Adını her duyuş bir masal gibi,\nKalbimde yankılanır nazik, diri.\nSaçların geceye dökülür iri,\nSevdan dokunurken en derin yeri.\nSeninle hayatım bayram sabahı,\nSevginle ışır her günün ahı." },
+        { title: "47. Şiir", content: "Gözlerin gökyüzü, mavi ve serin,\nSevdan sarmışken bu bitmez derin.\nHer gülüşün bahar, içim sevinçli,\nSeninle anlamlı her an, her dilim.\nKalbinle dolarken boş sokaklar,\nSevginle güzeldir her bir bahar." },
+        { title: "48. Şiir", content: "Ellerin dokunsa kır çiçekleri,\nGülüşün ısıtır buzdan dilleri.\nHasretin yakarken uzak günleri,\nSevginle sararım kırık dünleri.\nSeninle sonsuzluk hayalimde,\nKalbinle var olur her hecemde." },
+        { title: "49. Şiir", content: "Bir umut yeşerir gözlerinde hep,\nSevdanla kaybolur içimdeki dert.\nEllerin değince zaman bile geç,\nSeninle anlam bulur her yeni renk.\nKalbinle yaşarken bu sonsuz düşte,\nSevginde yitirilmez umut, neşe." },
+        { title: "50. Şiir", content: "Sesinle dağılır gecenin korkusu,\nGözlerin ışık, en temiz dokusu.\nSevdanla dolarken içimde huzur,\nSeninle tamam bu eksik yolculuk.\nKalbinle yürürken her yol dümdüz,\nSevginle silinir geçmişteki hüzün." },
+        { title: "51. Şiir", content: "Ellerin bahardır, tutunca sıcak,\nGözlerin umutla dolarken uzak.\nSevdanla sarılır her eski tuzak,\nSeninle yaşanır en temiz merak.\nKalbinle tamamdır bu eksik yürek,\nSevginle silinir tüm eski gerek." },
+        { title: "52. Şiir", content: "Kirpiklerin dokunsa en hafif rüzgar,\nSevdan kalbimde en derin bahar.\nHer bakışın içimi ısıtır yavaş,\nSeninle yaşanır en temiz savaş.\nKalbinde dururken sessiz bir meltem,\nSevginde kaybolur her eski elem." },
+        { title: "53. Şiir", content: "Bir gülüşün yeter, dertler dağılır,\nKalbimde sevdanla bahar çağrılır.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "54. Şiir", content: "Gözlerin deniz, dalgalı ve geniş,\nSevdan sarmışken her yanım serin.\nSesinle titrer en karanlık köşe,\nSeninle anlam bulur her gece.\nKalbinle yürürken yollar dümdüz,\nSevginle silinir geçmişteki hüzün." },
+        { title: "55. Şiir", content: "Adını fısıldar yıldızlar gece,\nKalbimde sevdanla açar her hece.\nEllerin değince en masum nağme,\nSeninle tamam olur bu ince çile.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "56. Şiir", content: "Bir bakışın yeter, dünya susar,\nKalbimde sevdanla bahar başlar.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "57. Şiir", content: "Gözlerin bahardır, içim açılır,\nGülüşün ufkumda güneş saçılır.\nSevdanla her sabah umutla dolur,\nKalbimden geçerken yollar yapılır.\nSeninle yaşamak en güzel rüya,\nÖmrüme nefessin, canım Zehra." },
+        { title: "58. Şiir", content: "Sesinle erir en sert duvarlar,\nSevdanla dolarken içim baharlar.\nGözlerin bakarken umutla hep var,\nSeninle unutulur dertli anılar.\nKalbinle yürürken her yol dümdüz,\nSevginle silinir geçmişteki hüzün." },
+        { title: "59. Şiir", content: "Bir sabah uyanır adın dilimde,\nSevdanla başlar gün, ışır içimde.\nGözlerin bakarken umutla her dem,\nSeninle güzelleşir her eski elem.\nKalbinle yürürken yollar sonsuz,\nSevginde kaybolur dertler, huzursuz." },
+        { title: "60. Şiir", content: "Kirpiklerin değse en ince sızı,\nSevdan kalbimde derin bir yazı.\nEllerin tutarken sıcak ve sakin,\nSeninle huzurlu her zor seferim.\nKalbinle sarılır her eski yara,\nSevginde silinir dertler, yara." },
+        { title: "61. Şiir", content: "Sesinle erir buz tutmuş gecem,\nGözlerinle parlar her karanlık dem.\nSevdanla yürürken yollar dümdüz,\nSeninle unutulur her eski hüzün.\nKalbinle dolarken içim umutla,\nSevginle başlar her sabah usulca." },
+        { title: "62. Şiir", content: "Adını fısıldar her esen rüzgar,\nKalbimde sevdanla bahar başlar.\nEllerin değince en masum nağme,\nSeninle tamam olur bu ince çile.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "63. Şiir", content: "Bir bakışın yeter, dünya susar,\nKalbimde sevdanla bahar başlar.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "64. Şiir", content: "Gözlerin bahardır, içim açılır,\nGülüşün ufkumda güneş saçılır.\nSevdanla her sabah umutla dolur,\nKalbimden geçerken yollar yapılır.\nSeninle yaşamak en güzel rüya,\nÖmrüme nefessin, canım Zehra." },
+        { title: "65. Şiir", content: "Bir gülüşün yeter, dertler dağılır,\nKalbimde sevdanla bahar çağrılır.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "66. Şiir", content: "Kirpiklerin düşse geceye nazik,\nSevdan kalbimde iz bırakır incecik.\nHer sözün bir bahar, sesin dengin,\nSeninle güzelleşir bu hüzüncük.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "67. Şiir", content: "Bir umut yeşerir gözlerinde hep,\nSevdanla kaybolur içimdeki dert.\nEllerin değince zaman bile geç,\nSeninle anlam bulur her yeni renk.\nKalbinle yaşarken bu sonsuz düşte,\nSevginde yitirilmez umut, neşe." },
+        { title: "68. Şiir", content: "Sesinle dağılır gecenin korkusu,\nGözlerin ışık, en temiz dokusu.\nSevdanla dolarken içimde huzur,\nSeninle tamam bu eksik yolculuk.\nKalbinle yürürken her yol dümdüz,\nSevginle silinir geçmişteki hüzün." },
+        { title: "69. Şiir", content: "Ellerin bahardır, tutunca sıcak,\nGözlerin umutla dolarken uzak.\nSevdanla sarılır her eski tuzak,\nSeninle yaşanır en temiz merak.\nKalbinle tamamdır bu eksik yürek,\nSevginle silinir tüm eski gerek." },
+        { title: "70. Şiir", content: "Kirpiklerin dokunsa en hafif rüzgar,\nSevdan kalbimde en derin bahar.\nHer bakışın içimi ısıtır yavaş,\nSeninle yaşanır en temiz savaş.\nKalbinde dururken sessiz bir meltem,\nSevginde kaybolur her eski elem." },
+        { title: "71. Şiir", content: "Bir sabah rüzgarı, saçların gibi,\nMis kokun bahçemde açan gül gibi.\nSesin yankılanır kalbimde hep mi?\nSensiz solgun, sensiz karanlık gibi.\nSevdan ömrüme ışık tutarken,\nDüşlerimden hiç eksilme, erken." },
+        { title: "72. Şiir", content: "Adını her duyuş bir masal gibi,\nKalbimde yankılanır nazik, diri.\nSaçların geceye dökülür iri,\nSevdan dokunurken en derin yeri.\nSeninle hayatım bayram sabahı,\nSevginle ışır her günün ahı." },
+        { title: "73. Şiir", content: "Gözlerin gökyüzü, mavi ve serin,\nSevdan sarmışken bu bitmez derin.\nHer gülüşün bahar, içim sevinçli,\nSeninle anlamlı her an, her dilim.\nKalbinle dolarken boş sokaklar,\nSevginle güzeldir her bir bahar." },
+        { title: "74. Şiir", content: "Ellerin dokunsa kır çiçekleri,\nGülüşün ısıtır buzdan dilleri.\nHasretin yakarken uzak günleri,\nSevginle sararım kırık dünleri.\nSeninle sonsuzluk hayalimde,\nKalbinle var olur her hecemde." },
+        { title: "75. Şiir", content: "Bir gülüşün yeter, dertler dağılır,\nKalbimde sevdanla bahar çağrılır.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "76. Şiir", content: "Gözlerin bahardır, içim açılır,\nGülüşün ufkumda güneş saçılır.\nSevdanla her sabah umutla dolur,\nKalbimden geçerken yollar yapılır.\nSeninle yaşamak en güzel rüya,\nÖmrüme nefessin, canım Zehra." },
+        { title: "77. Şiir", content: "Sesinle erir en sert duvarlar,\nSevdanla dolarken içim baharlar.\nGözlerin bakarken umutla hep var,\nSeninle unutulur dertli anılar.\nKalbinle yürürken her yol dümdüz,\nSevginle silinir geçmişteki hüzün." },
+        { title: "78. Şiir", content: "Bir umut yeşerir gözlerinde hep,\nSevdanla kaybolur içimdeki dert.\nEllerin değince zaman bile geç,\nSeninle anlam bulur her yeni renk.\nKalbinle yaşarken bu sonsuz düşte,\nSevginde yitirilmez umut, neşe." },
+        { title: "79. Şiir", content: "Adını fısıldar yıldızlar gece,\nKalbimde sevdanla açar her hece.\nEllerin değince en masum nağme,\nSeninle tamam olur bu ince çile.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "80. Şiir", content: "Bir sabah uyanır adın dilimde,\nSevdanla başlar gün, ışır içimde.\nGözlerin bakarken umutla her dem,\nSeninle güzelleşir her eski elem.\nKalbinle yürürken yollar sonsuz,\nSevginde kaybolur dertler, huzursuz." },
+        { title: "81. Şiir", content: "Ellerin bahardır, tutunca sıcak,\nGözlerin umutla dolarken uzak.\nSevdanla sarılır her eski tuzak,\nSeninle yaşanır en temiz merak.\nKalbinle tamamdır bu eksik yürek,\nSevginle silinir tüm eski gerek." },
+        { title: "82. Şiir", content: "Gözlerin deniz, dalgalı ve geniş,\nSevdan sarmışken her yanım serin.\nSesinle titrer en karanlık köşe,\nSeninle anlam bulur her gece.\nKalbinle yürürken yollar dümdüz,\nSevginle silinir geçmişteki hüzün." },
+        { title: "83. Şiir", content: "Kirpiklerin düşse geceye nazik,\nSevdan kalbimde iz bırakır incecik.\nHer sözün bir bahar, sesin dengin,\nSeninle güzelleşir bu hüzüncük.\nÖmrümde tek dilek, tek güzel ah,\nSevginle yaşlanmak her sabah." },
+        { title: "84. Şiir", content: "Bir gülüşün yeter, dertler dağılır,\nKalbimde sevdanla bahar çağrılır.\nEllerin dokunsa en sıcak diyar,\nSensiz her anım boş, her yol yokuşlar.\nSeninle tamamlanır eksik heceler,\nSevginde kaybolur eski kederler." },
+        { title: "85. Şiir", content: "Kirpiklerin dokunsa en hafif rüzgar,\nSevdan kalbimde en derin bahar.\nHer bakışın içimi ısıtır yavaş,\nSeninle yaşanır en temiz savaş.\nKalbinde dururken sessiz bir meltem,\nSevginde kaybolur her eski elem." },
+        { title: "86. Şiir", content: "Bir sabah rüzgarı, saçların gibi,\nMis kokun bahçemde açan gül gibi.\nSesin yankılanır kalbimde hep mi?\nSensiz solgun, sensiz karanlık gibi.\nSevdan ömrüme ışık tutarken,\nDüşlerimden hiç eksilme, erken." },
+        { title: "87. Şiir", content: "Ellerin dokunsa kır çiçekleri,\nGülüşün ısıtır buzdan dilleri.\nHasretin yakarken uzak günleri,\nSevginle sararım kırık dünleri.\nSeninle sonsuzluk hayalimde,\nKalbinle var olur her hecemde." },
+        { title: "88. Şiir", content: "Bir yıldız düşerken dilek tutarım,\nSevdanla dolar her boş sayfam.\nGözlerin bakarken sonsuz ve derin,\nSeninle anlam bulur en eski yanım.\nKalbinde saklanır en güzel düşler,\nSevginde kaybolur yalan her şeyler." },
+        { title: "89. Şiir", content: "Adını her duyuş bir masal gibi,\nKalbimde yankılanır nazik, diri.\nSaçların geceye dökülür iri,\nSevdan dokunurken en derin yeri.\nSeninle hayatım bayram sabahı,\nSevginle ışır her günün ahı." },
+        { title: "90. Şiir", content: "Gözlerin gökyüzü, mavi ve serin,\nSevdan sarmışken bu bitmez derin.\nHer gülüşün bahar, içim sevinçli,\nSeninle anlamlı her an, her dilim.\nKalbinle dolarken boş sokaklar,\nSevginle güzeldir her bir bahar." },
+        { title: "91. Şiir", content: "Bir umut yeşerir gözlerinde hep,\nSevdanla kaybolur içimdeki dert.\nEllerin değince zaman bile geç,\nSeninle anlam bulur her yeni renk.\nKalbinle yaşarken bu sonsuz düşte,\nSevginde yitirilmez umut, neşe." },
+        { title: "92. Şiir", content: "Sesinle erir buz tutmuş gecem,\nGözlerinle parlar her karanlık dem.\nSevdanla yürürken yollar dümdüz,\nSeninle unutulur her eski hüzün.\nKalbinle dolarken içim umutla,\nSevginle başlar her sabah usulca." },
+        { title: "93. Şiir", content: "Ellerin bahardır, tutunca sıcak,\nGözlerin umutla dolarken uzak.\nSevdanla sarılır her eski tuzak,\nSeninle yaşanır en temiz merak.\nKalbinle tamamdır bu eksik yürek,\nSevginle silinir tüm eski gerek." },
+        { title: "94. Şiir", content: "Bir sabah uyanır adın dilimde,\nSevdanla başlar gün, ışır içimde.\nGözlerin bakarken umutla her dem,\nSeninle güzelleşir her eski elem.\nKalbinle yürürken yollar sonsuz,\nSevginde kaybolur dertler, huzursuz." }
+    ];
+
+    const poemsDiv = document.getElementById("poems");
+    poems.forEach(poem => {
+        const poemDiv = document.createElement("div");
+        poemDiv.className = "poem";
+        poemDiv.innerHTML = `<h2>${poem.title}</h2><p>${poem.content}</p>`;
+        poemsDiv.appendChild(poemDiv);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgilime Mektuplar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f7e9ff;
+        }
+
+        #container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            animation: fadeIn 1s ease;
+        }
+
+        h1 {
+            color: #9b59b6;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+            animation: slideIn 0.8s ease;
+        }
+
+        button {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover {
+            background: #814a98;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Zehra'ya Özel </h1>
+        <p id="mektup">Sevgili Zehra, seninle tanıştığım gün hayatımın en güzel günüydü.</p>
+        <button onclick="sonrakiMektup()">Sonraki</button>
+    </div>
+
+    <script>
+        document.body.style.backgroundImage = "url('https://t4.ftcdn.net/jpg/10/17/90/09/360_F_1017900934_2I6c9uxRnecb7DYXl9iDF4B4X5RNLJE0.jpg')"; // Arka plan resmini buraya ekleyebilirsin
+
+        const mektuplar = [
+            "sana bu mektubu yazarken kalbim heyecanla çarpıyor. Kelimelerim, sana olan hislerimi tam anlamıyla anlatamayacak kadar yetersiz kalsa da, elimden geldiğince içimdekileri dökmek istiyorum.Seninle tanıştığım o anı düşündüğümde, her şeyin nasıl bir mucizeyle başladığını fark ediyorum. Hayatımın o ana kadar eksik olan parçasını bulmuş gibiydim. Senin sıcaklığın, o tatlı tebessümün, içimdeki karanlık bulutları dağıttı. Hayatımın belki de en sıradan gününü, en unutulmaz güne dönüştürdün.",
+            "Gözlerin, bana dünyadaki en güzel manzaraları hatırlatıyor.",
+            "Sana olan sevgimi anlatacak şiirler yazsam, şarkılar bestelesem, yine de bu hislerimi tam olarak ifade edemem. Çünkü sen, kelimelerden daha derin, notalardan daha güzel bir sevgiye layıksın.Zehra, iyi ki varsın. İyi ki hayatımdasın. Her an kalbimde bir yerdesin, ve her zaman öyle kalacaksın.",
+            "Her sabah, güne senin gülümsemeni düşünerek başlıyorum.",
+            "Biliyor musun, seninle tanıştığım andan itibaren kalbim sadece senin için atıyor. Hayatıma kattığın mutluluğu tarif edecek kelimeler bulmakta zorlanıyorum. Sen, benim en güzel hayalim, en saf sevincim ve her an düşündüğüm tek kişisin.",
+            "Sana olan sevgim her geçen gün daha da büyüyor.",
+            "Dünyada başka hiçbir şey senin kadar değerli değil benim için.",
+            "Her an, kalbimde yalnızca sen varsın.",
+            "Zaman dursa ve sonsuza kadar sana sarılsam...",
+            "Birlikte geçireceğimiz güzel günleri sabırsızlıkla bekliyorum.",
+            "Gözlerin bir yıldız kadar parlak, gülüşün ise dünyadaki tüm renkleri kıskandıracak kadar özel. Seninle her konuşmamda, hayat daha anlamlı hale geliyor. Seni düşündüğüm her an kalbimde bir çiçek açıyor.",
+            "Sen, benim için dünyanın en özel insanısın.",
+            "Her mektup, sana olan sevgimin bir yansıması.",
+            "Kalbim, sadece senin için atıyor.",
+            "Sana olan sevgim, sonsuz gökyüzü kadar büyük.",
+            "Senin yanında olmak, en güzel hayalim.",
+            "Hayatımın en güzel anısı, seninle geçirdiğim zamanlar.",
+            "Sana olan sevgim asla bitmeyecek.",
+            "Seninle her şey anlam kazanıyor.",
+            "Zehra, sen benim hayalimsin."
+        ];
+
+        let index = 0;
+
+        function sonrakiMektup() {
+            index = (index + 1) % mektuplar.length;
+            const mektupElement = document.getElementById('mektup');
+            mektupElement.style.opacity = 0;
+
+            setTimeout(() => {
+                mektupElement.textContent = mektuplar[index];
+                mektupElement.style.opacity = 1;
+            }, 500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zehra'ya Özel</title>
+    <style>
+        body {
+            background-color: #e6ccff;
+            font-family: 'Times New Roman', serif;
+            color: #4a0072;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            /* overflow: hidden; kaldırıldı */
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 36px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            padding-bottom: 50px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            width: 300px;
+            margin: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        /* Kalp animasyonları */
+        .heart {
+            position: absolute;
+            color: #ff4081;
+            font-size: 24px;
+            animation: float 5s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(1); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* Responsive tasarım için medya sorguları */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            .card {
+                width: 80%;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            .card {
+                width: 90%;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Zehra'ya İltifatlar 💜</h1>
+    <div class="container">
+        <script>
+            const iltifatlar = [
+                "Gözlerin Gibi Kahverengi Olan Kalbim: Zehra, gözlerin kahverengi bir çikolata gibi sıcak ve tatlı. Her baktığımda içimi ısıtıyor.",
+                "Gülüşünle Aydınlanan Hayatım: Gülüşün bir güneş gibi. Her gülüşünle etrafındaki her şey aydınlanıyor.",
+                "Tesettürünle Zarafetin Simgesi: Tesettürün, senin zarafetini ve asaletini öyle güzel tamamlıyor ki.",
+                "Kalbinin İnceliği: Senin kadar ince düşünceli ve nazik birini daha önce hiç tanımadım.",
+                "Sesinle Büyüleniyorum: Sesin bir meltem gibi. Her duyduğumda içimi huzur kaplıyor.",
+                "Seninle Her An Özel: Seninle geçirdiğim her an, hayatımın en özel anları.",
+                "Gözlerin Yıldızlar Kadar Parlak: Gözlerin gökyüzündeki yıldızlar gibi parlıyor.",
+                "Sen Benim İlham Kaynağımsın: Zehra, sen benim ilham kaynağımsın.",
+                "Seninle Her Şey Mümkün: Senin yanında olduğun sürece, her zorluğun üstesinden gelebileceğimi biliyorum.",
+                "Sen Bir Meleksin: Sen bir melek gibisin. Kalbin o kadar temiz ki...",
+                "Gözlerin Kalbimi Fethediyor: Gözlerin her baktığında kalbimi fethediyor. O kahverengi gözlerin, beni kendine hayran bırakıyor.",
+                "Seninle Her Şey Daha Güzel: Seninle olduğumda, her şey daha güzel. Sen varsan, hayat anlam kazanıyor.",
+                "Sen Benim En Değerlimsin: Zehra, sen benim en değerli hazinemsin. Seni her düşündüğümde, kalbim sevgiyle doluyor.",
+                "Seninle Gelecek Hayalim: Seninle bir gelecek hayal ediyorum. Seninle her gün, daha da güzel olacak.",
+                "Sen Benim İlk ve Tek Aşkımsın: Sen benim ilk ve tek aşkımsın. Kalbim senin için atıyor.",
+                "Seninle Her Şey Mükemmel: Seninle her şey mükemmel. Sen varsan, hayat anlam kazanıyor.",
+                "Sen Benim Her Şeyimsin: Zehra, sen benim her şeyimsin. Sen olmadan hayatımın bir anlamı yok.",
+                "Seninle Her An Bir Macera: Seninle geçirdiğim her an, bir macera gibi. Seninle her şey daha heyecanlı.",
+                "Sen Benim Mutluluğumsun: Sen benim mutluluğumsun. Seni her düşündüğümde, yüzüm gülüyor.",
+                "Seninle Her Şey Daha Anlamlı: Seninle her şey daha anlamlı. Sen varsan, hayat daha güzel."
+            ];
+
+            iltifatlar.forEach(text => {
+                document.write(`<div class="card">${text}</div>`);
+            });
+
+            // Kalp animasyonu
+            function createHeart() {
+                const heart = document.createElement("div");
+                heart.classList.add("heart");
+                heart.innerHTML = "💜";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+
+            setInterval(createHeart, 500);
+        </script>
+    </div>
+</body>
+</html>
